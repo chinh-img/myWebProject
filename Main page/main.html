@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gameland Emporium</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/b25957ae4f.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./Images/game_logo.jfif" type="image/x-icon">
+</head>
+<body>
+    <div class="header-spacer">
+        <!-- Header -->
+        <div class="header">
+            <input type="checkbox" name="" id="sidebar-active">
+            <label for="sidebar-active" class="open-sidebar-button"><i class="fa-solid fa-bars"></i></label>
+
+            <a href="#" class="nav-logo" title="Gameland Emporium - game marketplace">
+                <img src="./Images/game_logo.jfif" alt="Gameland Emporium Logo">
+            </a>
+            <nav>
+                <div class="nav-links">
+                        <a href="#">Browse Games</a>
+                        <a href="https://chinh-img.github.io/MyPortfolio/" target="_blank">Developers</a>
+                        <a href="#">Community</a>
+                        <a href="#">Forum</a>
+                        <a href="../Upload/upload.html">Upload Game</a>
+                </div>
+                <form action="" class="search-form">
+                    <input type="search" name="search" id="search-input" placeholder="Search for games or creators">
+                    <button type="submit" class="search-button" onclick="searchGames()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </nav>
+            <div class="nav-actions">
+                <a href="./cart.html"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                <a href="#" class="nav-button" id="logInBtn">Login</a>
+                <a href="#" class="nav-button" id="signUpBtn">Sign up</a>
+                <a href="../Profile/profile.html"><i class="fa-solid fa-user" id="users"></i></a>
+                <i class="fa-solid fa-right-from-bracket" id="logOutBtn"></i>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Content section -->
+    <div class="contentSection">
+        <!-- Side bar -->
+        <div class="sideBar col-3">
+            <form action="" class="search-form">
+                <input type="search" name="search" id="search-input" placeholder="Search for games or creators">
+            </form>
+            <!-- Website browser -->
+            <div class="sidebar_browse">
+                <section class="sidebar_browse_group">
+                    <h2>Famous tags</h2>
+                    <div class="browse_filters">
+                        <div class="column">
+                            <a href="#" title="horror">Horror games</a>
+                            <a href="#" title="visualNovel">Visual novels</a>
+                            <a href="#" title="stimulation">Stimulation games</a>
+                            <a href="#" title="3D">3D games</a>
+                            <a href="#" title="allTags">Browse all tags ➡</a>
+                        </div>
+                        <div class="column">
+                            <a href="#" title="macOs">MacOS games</a>
+                            <a href="#" title="multiplayer">Multiplayer</a>
+                            <a href="#" title="linux">Linux games</a>
+                            <a href="#" title="platform">Platform</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="sidebar_browse_group">
+                    <h2>Browse</h2>
+                    <div class="browse_filters">
+                        <div>
+                            <a href="#" title="games">Games assets</a>
+                            <a href="#" title="developers">Developers</a>
+                        </div>
+                        <div>
+                            <a href="#" title="community">Community</a>
+                            <a href="#" title="accounts">Accounts</a>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="sidebar_browse_group">
+                    <h2>Games by price</h2>
+                    <div class="browse_filters">
+                        <div>
+                            <a href="#" title="free">Free games</a>
+                            <a href="#" title="onSale">On sale</a>
+                            <a href="#" title="progress">On progress</a>
+                        </div>
+                        <div>
+                            <a href="#" title="topSell">Top sellers</a>
+                            <a href="#" title="$5">$5 or less</a>
+                            <a href="#" title="$10">Higher than $10</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Social Media -->
+            <div class="socialMedia">
+                <a href="https://discord.com/channels/@me" target="_blank" id="discord" title="discord"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100070712541004" target="_blank" id="facebook" title="facebook"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://x.com/TrngChnh616388" target="_blank" id="twitter" title="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/@BroCodez" target="_blank" id="youtube" title="youtube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://github.com/chinh-img" target="_blank" id="gitHub" title="gitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <!-- Blogs (Status: In progress) -->
+        </div>
+
+        <div class="mainContent col-9">
+            <!-- Sell games here -->
+            <div class="eventContainer">
+                <div class="snowflakes" aria-hidden="true">
+                    <div class="snowflake">❅</div>
+                    <div class="snowflake">❆</div>
+                    <div class="snowflake">❅</div>
+                    <div class="snowflake">❆</div>
+                    <div class="snowflake">❅</div>
+                    <div class="snowflake">❆</div>
+                </div>
+                <div id="countdown"></div>
+            </div>
+            <!-- Game sell -->
+            <div id="gameSell">
+                <!-- The games in the JavaScript file -->
+            </div>
+            <!-- Footer -->
+            <footer>
+                <div class="footer-content">
+                    <section class="footer-section">
+                        <h3>About Us</h3>
+                        <p>Gameland Emporium is a game marketplace where you can find and download games from various developers.</p>
+                        <a href="#" class="footer-link">Learn More</a>
+                    </section>
+                    <section class="footer-section">
+                        <h3>Community</h3>
+                        <ul>
+                            <li><a href="#" class="footer-link">Forums</a></li>
+                            <li><a href="#" class="footer-link">Discord</a></li>
+                            <li><a href="#" class="footer-link">Social Media</a></li>
+                        </ul>
+                    </section>
+                    <section class="footer-section">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#" class="footer-link">FAQ</a></li>
+                            <li><a href="#" class="footer-link">Contact Us</a></li>
+                            <li><a href="#" class="footer-link">Terms of Service</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Gameland Emporium. All rights reserved.</p>
+                    <div class="socialMedia">
+                        <a href="#" id="discord" title="discord"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#" id="facebook" title="facebook"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="#" id="twitter" title="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" id="youtube" title="youtube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" id="gitHub" title="gitHub"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+    <script src="app.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

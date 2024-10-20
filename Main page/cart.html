@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="cart.css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/b25957ae4f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header-spacer">
+        <!-- Header -->
+        <div class="header">
+            <a href="./main.html" class="nav-logo" title="Gameland Emporium - game marketplace">
+                <img src="./Images/game_logo.jfif" alt="Gameland Emporium Logo">
+            </a>
+            <nav>
+                <div class="nav-links">
+                        <a href="./main.html">Browse Games</a>
+                        <a href="https://chinh-img.github.io/MyPortfolio/">Developers</a>
+                        <a href="#">Community</a>
+                        <a href="#">Forum</a>
+                        <a href="../Upload/upload.html">Upload Game</a>
+                </div>
+                <form action="" class="search-form">
+                    <input type="search" name="search" id="search-input" placeholder="Search for games or creators">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </nav>
+            <div class="nav-actions">
+                <a href="./cart.html"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                <a href="#" class="nav-button" id="logInBtn">Login</a>
+                <a href="#" class="nav-button" id="signUpBtn">Sign up</a>
+                <a href="../Profile/profile.html"><i class="fa-solid fa-user" id="users"></i></a>
+                <i class="fa-solid fa-right-from-bracket" id="logOutBtn"></i>
+            </div>
+        </div>
+    </div>
+    <!-- Cart -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Total</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablebody">
+                         
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
+

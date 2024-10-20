@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="upload.css">
+    <script src="https://kit.fontawesome.com/b25957ae4f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header-spacer">
+        <!-- Header -->
+        <div class="header">
+            <a href="../Main page/main.html" class="nav-logo" title="Gameland Emporium - game marketplace">
+                <img src="../Main page/Images/game_logo.jfif" alt="Gameland Emporium Logo">
+            </a>
+            <nav>
+                <div class="nav-links">
+                        <a href="../Main page/main.html">Browse Games</a>
+                        <a href="#">Developers</a>
+                        <a href="#">Community</a>
+                        <a href="#">Forum</a>
+                        <a href="#">Upload Game</a>
+                </div>
+                <form action="" class="search-form">
+                    <input type="search" name="search" id="search-input" placeholder="Search for games or creators">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </nav>
+            <div class="nav-actions">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <a href="#" class="nav-button" id="logInBtn">Login</a>
+                <a href="#" class="nav-button" id="signUpBtn">Sign up</a>
+                <a href="../Profile/profile.html"><i class="fa-solid fa-user" id="users"></i></a>
+                <i class="fa-solid fa-right-from-bracket" id="logOutBtn"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload section -->
+    <div class="upload-section">
+        <div class="container">
+            <section class="detailsUpload">
+                <div>
+                    <h4>Title</h4>
+                    <input type="text" name="gameTitle" id="gameTitle" required>
+                </div>
+                <div>
+                    <h4>Description</h4>
+                    <input type="text" name="gameDesc" id="gameDesc" placeholder="Optional">
+                </div>
+                <div>
+                    <h4>Device</h4>
+                    <select name="gameDevice" id="gameDevice">
+                        <option value=""></option>
+                        <option value="window">Windows</option>
+                        <option value="MacOS">MacOs</option>
+                        <option value="android">Android</option>
+                        <option value="web">Web</option>
+                    </select>
+                </div>
+                <div>
+                    <h4>Pricing</h4>
+                    <button>
+                        <input type="radio" name="priceCheck" id="priceCheck">
+                        <span>0$ or Donation</span>
+                    </button>
+                    <button>
+                        <input type="radio" name="priceCheck" id="priceCheck">
+                        <span>Payments</span>
+                    </button>
+                    <button>
+                        <input type="radio" name="priceCheck" id="priceCheck">
+                        <span>No payments</span>
+                    </button><br>
+                    <input type="number" name="gamePrice" id="gamePrice" placeholder="$0">
+                </div>
+                <div>
+                    <h4>Genre</h4>
+                    <select name="gameGenre" id="gameGenre" required>
+                        <option value="none">No genre</option>
+                        <option value="platform">platform</option>
+                        <option value="2D">2D</option>
+                        <option value="action">Action</option>
+                        <option value="simulator">Simulator</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+                <div>
+                    <h4>Your game file</h4>
+                    <input type="file" name="gameFile" id="gameFile" required>
+                </div>
+            </section>
+            <section class="imgUpload">
+                <div class="imgGame">
+                    <img src="https://placehold.co/340x150/png" alt="" id="imgGame">
+                    <button id="imgUploadBtn">Upload image</button>
+                </div>
+                <details><summary>Project's Image</summary>The cover image is used whenever we wants to link to your project from another part of the site. Required (Minimum: 315x250, Recommended: 630x500)</details>
+                <h4>Gameplay or trailer</h4>
+                <input type="url" name="" id="gameUrl" placeholder="Optional">
+            </section>
+        </div>
+        <button type="submit" id="btnSubmit">Upload</button>
+    </div>
+    
+    <script src="../Main page/main.js"></script>
+    <script src="upload.js"></script>
+</body>
+</html>

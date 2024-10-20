@@ -1,0 +1,179 @@
+@import url('https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+}
+.header {
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+.nav-logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+.nav-logo img {
+  width: 100px;
+  height: 100px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+  background: url("../BgImg/12.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+
+}
+
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+
+.wrapper {
+  width: 450px;
+  color: #ffffff;
+  backdrop-filter: blur(25px);
+  border: 2px solid #c6c3c3;
+  border-radius: 15px;
+  padding: 7.5em 2.5em 4em 2.5em;
+  box-shadow: 0px 0px 10px 2px #00000033;
+  padding: 16px;
+  margin:100px auto;
+}
+
+.login_box {
+  color: #ffffff;
+  backdrop-filter: blur(25px);
+  border-radius: 15px;
+  padding: 7.5em 2.5em 4em 2.5em;
+}
+
+.login-header {
+  width: 140px;
+  height: 70px;
+  background-color: #c6c3c3;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.login-header span {
+  font-size: 30px;
+  color: #000000;
+}
+
+.input_box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.input-field {
+  width: 100%;
+  height: 55px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 16px;
+  padding-inline: 20px 50px;
+  border: 2px solid #c6c3c3;
+  border-radius: 30px;
+  outline: none;
+}
+
+
+
+.label {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  transition: 0.2s;
+}
+
+.input-field:focus ~ .label,
+.input-field:valid ~ .label {
+  background-color: #c6c3c3;
+  color: #000000;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 14px;
+  border-radius: 30px;
+  padding: 0 10px;
+}
+
+.fa-user, .fa-lock {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  font-size: 20px;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.remember-me {
+  display: flex;
+  gap: 4px;
+}
+
+.btnSubmit {
+  width: 60%;
+  height: 50px;
+  background: #ececec;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-top: 10px;
+}
+
+
+.switchMode {
+  font-weight: 900;
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+.switchMode:hover {
+  text-decoration: underline;
+}
+
+#errorAlert{
+    color: hsl(0, 97%, 28%);
+    
+}
