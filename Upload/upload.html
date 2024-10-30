@@ -17,22 +17,21 @@
             <nav>
                 <div class="nav-links">
                         <a href="../Main page/main.html">Browse Games</a>
-                        <a href="#">Developers</a>
+                        <a href="https://chinh-img.github.io/MyPortfolio/" target="_blank">Developers</a>
                         <a href="#">Community</a>
                         <a href="#">Forum</a>
-                        <a href="#">Upload Game</a>
+                        <a href="../Upload/upload.html">Upload Game</a>
                 </div>
                 <form action="" class="search-form">
                     <input type="search" name="search" id="search-input" placeholder="Search for games or creators">
-                    <button type="submit" class="search-button">
+                    <button type="submit" class="search-button" onclick="searchGames()">
                         <i class="fas fa-search"></i>
                     </button>
                 </form>
             </nav>
             <div class="nav-actions">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <a href="#" class="nav-button" id="logInBtn">Login</a>
-                <a href="#" class="nav-button" id="signUpBtn">Sign up</a>
+                <a href="../Main page/cart.html"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                <a href="../Register/register.html" class="nav-button" id="registerBtn">Register</a>
                 <a href="../Profile/profile.html"><i class="fa-solid fa-user" id="users"></i></a>
                 <i class="fa-solid fa-right-from-bracket" id="logOutBtn"></i>
             </div>
@@ -43,16 +42,17 @@
     <div class="upload-section">
         <div class="container">
             <section class="detailsUpload">
-                <div>
-                    <h4>Title</h4>
+                <h2>Upload Your Game</h2>
+                <div class="form-group">
+                    <label for="gameTitle"><i class="fas fa-gamepad"></i> Title</label>
                     <input type="text" name="gameTitle" id="gameTitle" required>
                 </div>
-                <div>
-                    <h4>Description</h4>
+                <div class="form-group">
+                    <label for="gameDesc"><i class="fas fa-info-circle"></i> Description</label>
                     <input type="text" name="gameDesc" id="gameDesc" placeholder="Optional">
                 </div>
-                <div>
-                    <h4>Device</h4>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-desktop"></i> Device</label><br>
                     <select name="gameDevice" id="gameDevice">
                         <option value=""></option>
                         <option value="window">Windows</option>
@@ -61,24 +61,12 @@
                         <option value="web">Web</option>
                     </select>
                 </div>
-                <div>
-                    <h4>Pricing</h4>
-                    <button>
-                        <input type="radio" name="priceCheck" id="priceCheck">
-                        <span>0$ or Donation</span>
-                    </button>
-                    <button>
-                        <input type="radio" name="priceCheck" id="priceCheck">
-                        <span>Payments</span>
-                    </button>
-                    <button>
-                        <input type="radio" name="priceCheck" id="priceCheck">
-                        <span>No payments</span>
-                    </button><br>
+                <div class="form-group">
+                    <label>Pricing</label>
                     <input type="number" name="gamePrice" id="gamePrice" placeholder="$0">
                 </div>
-                <div>
-                    <h4>Genre</h4>
+                <div class="form-group">
+                    <label>Genre</label>
                     <select name="gameGenre" id="gameGenre" required>
                         <option value="none">No genre</option>
                         <option value="platform">platform</option>
@@ -88,22 +76,24 @@
                         <option value="others">Others</option>
                     </select>
                 </div>
-                <div>
-                    <h4>Your game file</h4>
+                <div class="form-group">
+                    <label>Your game file</label>
                     <input type="file" name="gameFile" id="gameFile" required>
                 </div>
             </section>
             <section class="imgUpload">
-                <div class="imgGame">
-                    <img src="https://placehold.co/340x150/png" alt="" id="imgGame">
-                    <button id="imgUploadBtn">Upload image</button>
+                <h3>Upload Images</h3>
+                <div class="drag-drop-area">
+                    <p>Drag & Drop your image here or <span>Click to Upload</span></p>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <img src="https://placehold.co/630x500/png" alt="" id="imgGame" class="img-preview">
                 </div>
-                <details><summary>Project's Image</summary>The cover image is used whenever we wants to link to your project from another part of the site. Required (Minimum: 315x250, Recommended: 630x500)</details>
+                <button id="imgUploadBtn" type="submit" onclick="uploadImage()"><i class="fas fa-cloud-upload-alt"></i> Upload image</button>
                 <h4>Gameplay or trailer</h4>
                 <input type="url" name="" id="gameUrl" placeholder="Optional">
             </section>
         </div>
-        <button type="submit" id="btnSubmit">Upload</button>
+        <button type="submit" id="btnSubmit"><i class="fas fa-cloud-upload-alt"></i> Upload</button>
     </div>
     
     <script src="../Main page/main.js"></script>

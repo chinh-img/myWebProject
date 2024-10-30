@@ -127,7 +127,25 @@ function totalShow() {
         <td>
         <button type="button" class="btn btn-success">
             Checkout <span class="glyphicon glyphicon-play"></span>
-        </button></td>
+        </button>
+        <button class='order'>
+            <span class='default'> Complete Order</span>
+            <span class='success'> Order Placed
+                svg(viewbox='0 0 12 10')
+                    polyline(points='1.5 6 4.5 9 10.5 1')
+                </svg>
+            </span>
+            <div class='box'></div>
+            <div class='truck'>
+                <div class='back'></div>
+                <div class='front'></div>
+                    <div class='window'></div>
+                <div class='light top'></div>
+                <div class='light bottom'></div>
+            </div>
+            <div class='lines'></div>
+        </button>
+        </td>
     </tr>
     `
     document.getElementById("tablebody").innerHTML += cart_total
@@ -159,3 +177,15 @@ function delete_cart(userID, productID) {
     update_noti_cart()
     location.reload()
 }
+document.querySelector('.order').click(function(e) {
+
+    let button = $(this);
+
+    if(!button.hasClass('animate')) {
+        button.addClass('animate');
+        setTimeout(() => {
+            button.removeClass('animate');
+        }, 10000);
+    }
+
+});

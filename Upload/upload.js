@@ -8,15 +8,16 @@ imgInput.accept = "image/*";
 imgInput.style.display = "none"
 document.body.appendChild(imgInput)
 
-imgUploadBtn.addEventListener("click", function() {
+function uploadImage() {
     imgInput.click()
-})
+}
 imgInput.addEventListener("change", function() {
     const selectedFile = imgInput.files[0];
     console.log(selectedFile);
     if (selectedFile) {
         const fileReader = new FileReader();
         fileReader.onload = function(file) {
+            console.log(file.target.result);
             document.querySelector("#imgGame").src = file.target.result;
         };
         fileReader.readAsDataURL(selectedFile);
@@ -39,7 +40,7 @@ imgInput.addEventListener("change", function() {
         const newGame = {
             name: gameTitle,
             id: gameList.length, // Using timestamp as a simple unique id
-            description: gameDescription,
+            details: gameDescription,
             image: uploadedImageData,
             tags: `#${gameTags}`,
             price: gamePrice,
@@ -54,7 +55,7 @@ imgInput.addEventListener("change", function() {
 
         // Clear the form
         gameTitle.value = "";
-        document.getElementById("gameDescription").textContent = "";
+        gameDescription.value = "";
         document.querySelector("#imgGame").src = "";
         imgUploadBtn.textContent = "Upload Image";
         uploadedImageData = null;

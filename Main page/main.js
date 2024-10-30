@@ -11,9 +11,7 @@ function check_currentUser() {
     if (currentUser.length > 0) {
         let user = document.getElementById("users");
         user.innerHTML = currentUser[0].name;
-
-        signUpBtn.style.display = `none`;
-        logInBtn.style.display = `none`;
+        document.getElementById("registerBtn").style.display = "none"
     }
     else {
         logOutBtn.style.display = `none`;
@@ -24,9 +22,7 @@ logOutBtn.addEventListener("click", logOut)
 function logOut() {
     localStorage.removeItem("currentUser")
     location.reload();
-
-    signUpBtn.style.display = `block`;
-    logInBtn.style.display = `block`;
+    document.getElementById("registerBtn").style.display = `block`;
 }
 check_currentUser(); // Chạy hàm để kiểm tra người dùng
 
@@ -34,6 +30,9 @@ check_currentUser(); // Chạy hàm để kiểm tra người dùng
 function createGameCard(game) {
     let gameCard = document.createElement("div");
     gameCard.classList.add("gameCard");
+    let detailsText = game.details.length > 30
+    ? game.details.substring(0, 30) + "..."
+    : game.details;
 
     let template = `
         <img class="gameImg" src="${game.image}" />
@@ -98,11 +97,9 @@ countdownToChristmas();
 
 function searchGames() {
     const searchTerm = searchInput.value.toLowerCase();
-    
-    // Clear previous search results
-    gameContainer.innerHTML = '';
 
-    // Filter games based on search term
+    gameContainer.innerHTML = '';
+    
     const filteredGames = gameList.filter(game => 
         game.name.toLowerCase().includes(searchTerm) ||
         game.tags.toLowerCase().includes(searchTerm) ||

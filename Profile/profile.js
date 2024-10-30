@@ -70,9 +70,9 @@ function saveChanges() {
 
         // Update local storage
         localStorage.setItem("userList", JSON.stringify(userList));
-        localStorage.setItem("currentUser", JSON.stringify(currentUser));
-  
-        console.log("Changes saved successfully!");
+        localStorage.setItem("currentUser", JSON.stringify(currentUserData));
+        window.alert("Changes saved successfully!");
+        location.href = "../Sign in/SignIn.html"
       } else {
           console.error("Error: Current user not found in user list.");
       }
@@ -85,3 +85,15 @@ function saveChanges() {
 }
 let nameElement = document.getElementById("name");
 console.log(nameElement);
+// Change user name
+changeNameBtn.addEventListener("mouseover", () =>{
+  changeNameBtn.style.cursor = "pointer"
+})
+changeNameBtn.addEventListener("click", () => {
+  let newName = window.prompt("Enter your new username:");
+  while (newName == "" || newName == null) {
+    window.alert("You must type a name");
+    newName = window.prompt("Enter your new username:");
+  }
+  document.getElementById("name").textContent = newName.toLowerCase();
+})

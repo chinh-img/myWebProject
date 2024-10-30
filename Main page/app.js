@@ -21,28 +21,30 @@ setInterval(createSnowflake, 500);
 
     //Interact with buttons
         // Login && Signup part
-const logInBtn = document.getElementById("logInBtn");
-const signUpBtn = document.getElementById("signUpBtn");
 const logOutBtn = document.getElementById("logOutBtn")
-
-logInBtn.addEventListener("click", () => {
-    logInBtn.setAttribute("href", "../Sign in/SignIn.html");
-});
-
-signUpBtn.addEventListener("click", () => {
-    signUpBtn.setAttribute("href", "../Sign up/Register.html");
-})
         // Sidebar
-const checkbox = document.getElementById('sidebar-active');
+const sidebarToggle = document.getElementById('sidebar-active');
 const sidebar = document.querySelector('.sideBar');
+const mainContent = document.querySelector('.mainContent');
 
-checkbox.addEventListener('change', () => {
-    if (checkbox.checked) {
-        sidebar.style.left = `-100%`;
+// Function to handle sidebar toggle
+function handleSidebarToggle() {
+    if (sidebarToggle.checked) {
+        sidebar.classList.add('sidebar-open');
+        sidebar.classList.remove('sidebar-closed');
+        mainContent.classList.remove('shift-left');
+        document.querySelector(".eventContainer").style.height = "500px"
     } else {
-        sidebar.style.left = '0';
+        sidebar.classList.add('sidebar-closed');
+        sidebar.classList.remove('sidebar-open'); 
+        mainContent.classList.add('shift-left', 'col-12');
+        mainContent.classList.remove('col-9');
+        document.querySelector(".eventContainer").style.height = "700px"
     }
-});
+}
+
+// Event listener for checkbox toggle
+sidebarToggle.addEventListener('change', handleSidebarToggle);
     // Games list
 let gameList = localStorage.getItem("gameList")? JSON.parse(localStorage.getItem("gameList"))
 :[
@@ -52,10 +54,11 @@ let gameList = localStorage.getItem("gameList")? JSON.parse(localStorage.getItem
         device: "Web",
         image: "https://s3-sgn10.fptcloud.com/teky-prod/teky-edu-vn/media/project_medias/2024/9/29/CWNHmM2TpyApSkAE_202492915419.png",
         tags: "#Classical",
-        details: "blah blah blah",
+        details: "A snake that will steals your gifts",
         user: "admin",
         date: new Date(),
         id: 0
     }
 ];
-localStorage.setItem("gameList",JSON.stringify(gameList))
+
+localStorage.setItem("gameList", JSON.stringify(gameList))
