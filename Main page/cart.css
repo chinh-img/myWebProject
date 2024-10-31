@@ -177,6 +177,7 @@ nav {
     font-size: 20px;
 }
 
+/* Checkout button */
 .order {
     appearance: none;
     border: 0;
@@ -184,12 +185,10 @@ nav {
     position: relative;
     height: 63px;
     width: 240px;
-    padding: 0;
     outline: none;
     cursor: pointer;
     border-radius: 32px;
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
-    -webkit-tap-highlight-color: transparent;
+
     overflow: hidden;
     transition: transform .3s ease;
     span {

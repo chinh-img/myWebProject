@@ -125,14 +125,12 @@ function totalShow() {
             <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
         </button></td>
         <td>
-        <button type="button" class="btn btn-success">
-            Checkout <span class="glyphicon glyphicon-play"></span>
-        </button>
+
         <button class='order'>
-            <span class='default'> Complete Order</span>
+            <span class='default'>Complete Order ▶</span></span>
             <span class='success'> Order Placed
-                svg(viewbox='0 0 12 10')
-                    polyline(points='1.5 6 4.5 9 10.5 1')
+                <svg viewbox='0 0 12 10'>
+                    <polyline points='1.5 6 4.5 9 10.5 1'></polyline
                 </svg>
             </span>
             <div class='box'></div>
@@ -177,15 +175,35 @@ function delete_cart(userID, productID) {
     update_noti_cart()
     location.reload()
 }
-document.querySelector('.order').click(function(e) {
 
-    let button = $(this);
-
-    if(!button.hasClass('animate')) {
-        button.addClass('animate');
-        setTimeout(() => {
-            button.removeClass('animate');
-        }, 10000);
+// Thanh toán
+function checkout() {
+    // Kiểm tra đã có sản phẩm trong cart hoặc người dùng đã đăng nhập
+    if (!currentUser || cart.length === 0) {
+        alert("Your cart is empty or you're not logged in.");
+        return;
     }
 
-});
+    // Hiệu ứng đặt hàng
+    let orderButton = document.querySelector('.order');
+    if (!orderButton.classList.contains('animate')) {
+        orderButton.classList.add('animate');
+
+        setTimeout(() => {
+            orderButton.classList.remove('animate');
+            alert(`Order placed successfully! Total: $${total.toFixed(2)}`); // total: đã tính tổng ở trên
+            clearCart(); // Clear cart after checkout
+        }, 10000);
+    }
+}
+
+// Clear the cart after checkout
+function clearCart() {
+    // Filter out items for the current user and save updated cart to localStorage
+    cart = cart.filter(item => item.userID !== currentUser[currentUser.length - 1].id);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    update_noti_cart();
+    location.reload(); 
+}
+
+document.querySelector('.order').addEventListener('click', checkout);
